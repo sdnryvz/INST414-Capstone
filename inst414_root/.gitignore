@@ -1,5 +1,11 @@
+.env 
+
 # Data
 /data/
+
+# Ignore large local data files
+output.csv
+*.csv
 
 # Mac OS-specific storage files
 .DS_Store

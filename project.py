@@ -1,3 +1,8 @@
+# To push to git use these three steps:
+# git add .
+# git commit -m "Describe what you changed"
+# git push origin main 
+
 # Pulling API
 
 from googleapiclient.discovery import build
@@ -7,7 +12,8 @@ import time
 import csv
 from datetime import datetime, timedelta, date
 
-API_KEY = "AIzaSyA86bBmTuMc304g-T2BQaqLbEUQloVsvUg"
+from inst414_capstone.config import API_KEY
+
 OUTPUT_FILE = "travel_vlogs_2017_2019.csv"
 LOG_FILE = "dataset_log.txt"
 PROGRESS_FILE = "progress.txt"
@@ -145,3 +151,4 @@ with open(LOG_FILE, "a") as log:
 
 print(f"🗓️ Logged {len(seen_videos)} videos on {date.today()}")
 print(f"📄 Log file: {LOG_FILE}")
+
