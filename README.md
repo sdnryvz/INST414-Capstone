@@ -4,7 +4,15 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-Media trends in short and long form content.
+Predicting Spotify Song Popularity using audio features. 
+
+This project predicts Spotify song popularity using machine learning models built from audio features such as danceability, energy, loudness, valence, and tempo, along with playlist metadata like genre and subgenre. The dataset was split using an 80/20 train–test split, with no stratification since popularity is a continuous target. I also used 5-fold cross-validation to evaluate model generalization and ensure that performance was not dependent on a single train/test split.
+
+I tested three models: Linear Regression as a simple benchmark, Random Forest as a nonlinear ensemble method, and CatBoost as a gradient boosting model optimized for categorical data. A naive baseline model that predicts the mean popularity for all songs served as a minimum performance benchmark; it achieved an MAE of 20.77, RMSE of 24.82, and an R² near zero. This confirmed that the baseline captured no meaningful variation in popularity, so any effective model needed to significantly outperform it.
+
+Among all models tested, the Random Forest performed best, achieving an MAE of 16.97, RMSE of 21.16, and an R² of 0.273. It trained quickly (3–5 seconds) and offered reasonable interpretability through feature importance analysis, which showed that danceability, energy, and valence were among the strongest predictors of popularity. I also completed required regression diagnostics, including residual analysis, Q-Q plots, error distributions, cross-validation results, and worst-prediction analysis. Feature engineering focused primarily on encoding categorical variables, and attempts at feature elimination actually reduced performance.
+
+Looking ahead to Sprint 4, I plan to finalize my model, refine visualizations, write a clear non-technical explanation of results, and potentially explore a simple ensemble of Random Forest and CatBoost. I will also prepare a presentation-ready analysis and begin drafting my final paper. I am currently on track, with my biggest win being the strong performance of the Random Forest model and my biggest challenge being the inherent noise in Spotify popularity data. I feel moderately confident in the model (7/10) and may need instructor feedback on interpretation and communicating results effectively.
 
 ## Project Organization
 
